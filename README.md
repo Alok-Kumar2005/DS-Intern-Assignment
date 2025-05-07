@@ -1,5 +1,16 @@
 # Smart Factory Energy Prediction Challenge
 
+
+
+```
+conda create -n DSInter python=3.10 -y
+conda activate DSInter
+pip install -r requirements.txt
+```
+
+
+
+
 ## Problem Overview
 
 You've been hired as a data scientist for SmartManufacture Inc., a leading industrial automation company. The company has deployed an extensive sensor network throughout one of their client's manufacturing facilities to monitor environmental conditions and energy usage.

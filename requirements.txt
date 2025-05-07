@@ -13,5 +13,3 @@ dagshub
 ipykernel
 seaborn
 dvc
-
--e .
