@@ -1,0 +1,104 @@
+2025-05-08 18:28:35,678 - __main__ - INFO - Loading model from models\lgbm_model.pkl
+2025-05-08 18:28:35,889 - __main__ - INFO - Loading scaler from data\models\standard_scaler.pkl
+2025-05-08 18:28:35,889 - __main__ - INFO - Model and scaler loaded successfully
+2025-05-08 18:28:35,889 - __main__ - INFO - Model loaded successfully, starting Flask app
+2025-05-08 18:28:35,918 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-05-08 18:28:35,918 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-08 18:28:35,920 - werkzeug - INFO -  * Restarting with stat
+2025-05-08 18:28:37,233 - __main__ - INFO - Loading model from models\lgbm_model.pkl
+2025-05-08 18:28:37,458 - __main__ - INFO - Loading scaler from data\models\standard_scaler.pkl
+2025-05-08 18:28:37,458 - __main__ - INFO - Model and scaler loaded successfully
+2025-05-08 18:28:37,458 - __main__ - INFO - Model loaded successfully, starting Flask app
+2025-05-08 18:28:37,470 - werkzeug - WARNING -  * Debugger is active!
+2025-05-08 18:28:37,474 - werkzeug - INFO -  * Debugger PIN: 106-950-931
+2025-05-08 18:28:42,867 - werkzeug - INFO - 127.0.0.1 - - [08/May/2025 18:28:42] "GET / HTTP/1.1" 200 -
+2025-05-08 18:28:42,978 - werkzeug - INFO - 127.0.0.1 - - [08/May/2025 18:28:42] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-05-08 18:28:54,916 - __main__ - INFO - Received prediction request with data: {'lighting': 66880, 'outdoor_temperature': 6.1, 'atmospheric_pressure': 762.33, 'outdoor_humidity': 45.67, 'wind_speed': 5.33, 'zone1_temperature': 21.7, 'zone1_humidity': 33.8, 'zone2_temperature': 19.6, 'zone3_temperature': 22.13, 'zone4_temperature': 19.79, 'zone6_temperature': 24.07, 'zone6_humidity': 22.93, 'zone8_temperature': 30.6, 'zone8_humidity': 38.4, 'zone9_humidity': 6.1, 'hour': 15, 'random_variable': 27.2}
+2025-05-08 18:28:54,918 - __main__ - INFO - Input DataFrame shape: (1, 17)
+2025-05-08 18:28:54,918 - __main__ - INFO - Loading model from models\lgbm_model.pkl
+2025-05-08 18:28:54,922 - __main__ - INFO - Loading scaler from data\models\standard_scaler.pkl
+2025-05-08 18:28:54,924 - __main__ - INFO - Model and scaler loaded successfully
+2025-05-08 18:28:54,926 - __main__ - ERROR - Error during prediction: The feature names should match those that were passed during fit.
+Feature names unseen at fit time:
+- lighting
+Feature names seen at fit time, yet now missing:
+- lighting_energy
+
+2025-05-08 18:28:54,927 - werkzeug - INFO - 127.0.0.1 - - [08/May/2025 18:28:54] "[35m[1mPOST /predict HTTP/1.1[0m" 500 -
+2025-05-08 18:30:06,382 - __main__ - INFO - Received prediction request with data: {'lighting': 66879.86, 'outdoor_temperature': 6.11, 'atmospheric_pressure': 762.33, 'outdoor_humidity': 45.8, 'wind_speed': 5.47, 'zone1_temperature': 21.67, 'zone1_humidity': 33.66, 'zone2_temperature': 19.55, 'zone3_temperature': 22.09, 'zone4_temperature': 19.84, 'zone6_temperature': 24.11, 'zone6_humidity': 23.06, 'zone8_temperature': 30.63, 'zone8_humidity': 38.27, 'zone9_humidity': 6.21, 'hour': 10, 'random_variable': 27.24}
+2025-05-08 18:30:06,387 - __main__ - INFO - Input DataFrame shape: (1, 17)
+2025-05-08 18:30:06,391 - __main__ - INFO - Loading model from models\lgbm_model.pkl
+2025-05-08 18:30:06,398 - __main__ - INFO - Loading scaler from data\models\standard_scaler.pkl
+2025-05-08 18:30:06,398 - __main__ - INFO - Model and scaler loaded successfully
+2025-05-08 18:30:06,400 - __main__ - ERROR - Error during prediction: The feature names should match those that were passed during fit.
+Feature names unseen at fit time:
+- lighting
+Feature names seen at fit time, yet now missing:
+- lighting_energy
+
+2025-05-08 18:30:06,401 - werkzeug - INFO - 127.0.0.1 - - [08/May/2025 18:30:06] "[35m[1mPOST /predict HTTP/1.1[0m" 500 -
+2025-05-08 18:31:41,489 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Lenovo\\MLOPS\\DS-Intern-Assignment\\app.py', reloading
+2025-05-08 18:31:41,660 - werkzeug - INFO -  * Restarting with stat
+2025-05-08 18:31:42,980 - __main__ - INFO - Loading model from models\lgbm_model.pkl
+2025-05-08 18:31:43,189 - __main__ - INFO - Loading scaler from data\models\standard_scaler.pkl
+2025-05-08 18:31:43,189 - __main__ - INFO - Model and scaler loaded successfully
+2025-05-08 18:31:43,189 - __main__ - INFO - Model loaded successfully, starting Flask app
+2025-05-08 18:31:43,198 - werkzeug - WARNING -  * Debugger is active!
+2025-05-08 18:31:43,201 - werkzeug - INFO -  * Debugger PIN: 106-950-931
+2025-05-08 18:33:13,791 - werkzeug - INFO -  * Detected change in 'c:\\users\\lenovo\\mlops\\ds-intern-assignment\\app.py', reloading
+2025-05-08 18:33:13,969 - werkzeug - INFO -  * Restarting with stat
+2025-05-08 18:33:15,303 - __main__ - INFO - Loading model from models\lgbm_model.pkl
+2025-05-08 18:33:15,519 - __main__ - INFO - Loading scaler from data\models\standard_scaler.pkl
+2025-05-08 18:33:15,519 - __main__ - INFO - Model and scaler loaded successfully
+2025-05-08 18:33:15,519 - __main__ - INFO - Model loaded successfully, starting Flask app
+2025-05-08 18:33:15,528 - werkzeug - WARNING -  * Debugger is active!
+2025-05-08 18:33:15,530 - werkzeug - INFO -  * Debugger PIN: 106-950-931
+2025-05-08 18:33:18,310 - werkzeug - INFO - 127.0.0.1 - - [08/May/2025 18:33:18] "GET / HTTP/1.1" 200 -
+2025-05-08 18:33:20,129 - __main__ - INFO - Received prediction request with data: {'lighting': 66880, 'outdoor_temperature': 6.1, 'atmospheric_pressure': 762.33, 'outdoor_humidity': 45.67, 'wind_speed': 5.33, 'zone1_temperature': 21.7, 'zone1_humidity': 33.8, 'zone2_temperature': 19.6, 'zone3_temperature': 22.13, 'zone4_temperature': 19.79, 'zone6_temperature': 24.07, 'zone6_humidity': 22.93, 'zone8_temperature': 30.6, 'zone8_humidity': 38.4, 'zone9_humidity': 6.1, 'hour': 15, 'random_variable': 27.2}
+2025-05-08 18:33:20,129 - __main__ - INFO - Input DataFrame shape: (1, 17)
+2025-05-08 18:33:20,130 - __main__ - INFO - Loading model from models\lgbm_model.pkl
+2025-05-08 18:33:20,132 - __main__ - INFO - Loading scaler from data\models\standard_scaler.pkl
+2025-05-08 18:33:20,132 - __main__ - INFO - Model and scaler loaded successfully
+2025-05-08 18:33:20,133 - __main__ - ERROR - Error during prediction: The feature names should match those that were passed during fit.
+Feature names unseen at fit time:
+- 0
+- 1
+- 10
+- 11
+- 12
+- ...
+Feature names seen at fit time, yet now missing:
+- atmospheric_pressure
+- hour
+- lighting_energy
+- outdoor_humidity
+- outdoor_temperature
+- ...
+
+2025-05-08 18:33:20,133 - werkzeug - INFO - 127.0.0.1 - - [08/May/2025 18:33:20] "[35m[1mPOST /predict HTTP/1.1[0m" 500 -
+2025-05-08 18:33:55,305 - werkzeug - INFO -  * Detected change in 'c:\\users\\lenovo\\mlops\\ds-intern-assignment\\app.py', reloading
+2025-05-08 18:33:55,487 - werkzeug - INFO -  * Restarting with stat
+2025-05-08 18:33:56,803 - __main__ - INFO - Loading model from models\lgbm_model.pkl
+2025-05-08 18:33:57,021 - __main__ - INFO - Loading scaler from data\models\standard_scaler.pkl
+2025-05-08 18:33:57,022 - __main__ - INFO - Model and scaler loaded successfully
+2025-05-08 18:33:57,022 - __main__ - INFO - Model loaded successfully, starting Flask app
+2025-05-08 18:33:57,028 - werkzeug - WARNING -  * Debugger is active!
+2025-05-08 18:33:57,032 - werkzeug - INFO -  * Debugger PIN: 106-950-931
+2025-05-08 18:33:58,580 - werkzeug - INFO - 127.0.0.1 - - [08/May/2025 18:33:58] "GET / HTTP/1.1" 200 -
+2025-05-08 18:33:59,824 - __main__ - INFO - Received prediction request with data: {'lighting': 66880, 'outdoor_temperature': 6.1, 'atmospheric_pressure': 762.33, 'outdoor_humidity': 45.67, 'wind_speed': 5.33, 'zone1_temperature': 21.7, 'zone1_humidity': 33.8, 'zone2_temperature': 19.6, 'zone3_temperature': 22.13, 'zone4_temperature': 19.79, 'zone6_temperature': 24.07, 'zone6_humidity': 22.93, 'zone8_temperature': 30.6, 'zone8_humidity': 38.4, 'zone9_humidity': 6.1, 'hour': 15, 'random_variable': 27.2}
+2025-05-08 18:33:59,825 - __main__ - INFO - Input DataFrame shape: (1, 17)
+2025-05-08 18:33:59,825 - __main__ - INFO - Loading model from models\lgbm_model.pkl
+2025-05-08 18:33:59,828 - __main__ - INFO - Loading scaler from data\models\standard_scaler.pkl
+2025-05-08 18:33:59,828 - __main__ - INFO - Model and scaler loaded successfully
+2025-05-08 18:33:59,832 - __main__ - INFO - Features scaled successfully
+2025-05-08 18:34:04,418 - __main__ - INFO - Prediction result: 57.760432673836846
+2025-05-08 18:34:04,418 - werkzeug - INFO - 127.0.0.1 - - [08/May/2025 18:34:04] "POST /predict HTTP/1.1" 200 -
+2025-05-08 18:35:05,789 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Lenovo\\MLOPS\\DS-Intern-Assignment\\app.py', reloading
+2025-05-08 18:35:05,978 - werkzeug - INFO -  * Restarting with stat
+2025-05-08 18:35:07,267 - __main__ - INFO - Loading model from models\lgbm_model.pkl
+2025-05-08 18:35:07,498 - __main__ - INFO - Loading scaler from data\models\standard_scaler.pkl
+2025-05-08 18:35:07,499 - __main__ - INFO - Model and scaler loaded successfully
+2025-05-08 18:35:07,499 - __main__ - INFO - Model loaded successfully, starting Flask app
+2025-05-08 18:35:07,507 - werkzeug - WARNING -  * Debugger is active!
+2025-05-08 18:35:07,511 - werkzeug - INFO -  * Debugger PIN: 106-950-931
