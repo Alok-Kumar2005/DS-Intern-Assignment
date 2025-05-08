@@ -10,118 +10,74 @@ pip install -r requirements.txt
 
 
 
+## Approach to the Problem
+### Data Ingestion:
+   - Loaded raw data from CSV files
+   - Performed basic timestamp conversion and extracted time features (hour, minute)
+   - Focused on key numeric columns like equipment energy consumption, lighting energy, and temperature/humidity zones
+   - Split data into train and test sets for model development
 
-## Problem Overview
 
-You've been hired as a data scientist for SmartManufacture Inc., a leading industrial automation company. The company has deployed an extensive sensor network throughout one of their client's manufacturing facilities to monitor environmental conditions and energy usage.
+## Data Preprocessing:
+   - Identified and removed low-correlation features with threshold less than 0.01
+   - Handled outliers using a clamping technique based on IQR (Interquartile Range)
+   - Consolidated random variables by taking their average
+   - Dropped redundant columns to focus on the most relevant features
 
-The client is concerned about the increasing energy costs associated with their manufacturing equipment. They want to implement a predictive system that can forecast equipment energy consumption based on various environmental factors and sensor readings from different zones of the factory.
 
-## Your Task
+## Feature Engineering:
+   - Applied KNN imputation to handle missing values in both train and test datasets
+   - Used standardization to normalize feature scales
+   - Extracted the target variable (equipment_energy_consumption) from the datasets
+   - Saved the processed features for model training
 
-Your assignment is to develop a machine learning model that can accurately predict the energy consumption of industrial equipment (`equipment_energy_consumption`) based on the data collected from the factory's sensor network. This will help the facility managers optimize their operations for energy efficiency and cost reduction.
 
-### Specific Goals:
+## Model Building:
+   - Trained a LightGBM regression model, a gradient boosting framework optimized for efficiency
+   - Utilized parameters specified in the configuration file
+   - Evaluated initial model performance on training data using RMSE and R² metrics
 
-1. Analyze the provided sensor data to identify patterns and relationships between environmental factors and equipment energy consumption
-2. Build a robust regression model to predict equipment energy consumption
-3. Evaluate the model's performance using appropriate metrics
-4. Provide actionable insights and recommendations for reducing energy consumption
 
-## Repository Structure
+## Model Evaluation:
+   - Assessed model performance on test data
+   - Calculated key metrics: mean squared error, mean absolute error, and R² score
+   - Saved results to a metrics file for tracking and comparison
 
-This repository is organized as follows:
+# Key Insights from the Data
+   - there are lots of column which are not helping in predicting the output
+   - 'random_variable1' and 'random_variable2' is similar
+   - outlier present in the data
+   - almost all columns are normalized
 
+# Model perfomace evaluation
+   - using lazyregressor to predict the best model
+   - LGBMClassifier and some other are also performing good on the dataset
+   - using MLFlow tool to log the value 
+   - with the help of RandomSearchCV got the best parameter's
+
+# Recommendations for reducing equipment energy consumption
+### Time-Based Equipment Scheduling:
+   - Use the hourly patterns identified to create optimized equipment schedules
+   - Program equipment to operate in low-power modes during typical low-activity hours
+
+### Continuous Monitoring and Optimization:
+   - Deploy the model in production to continuously monitor energy consumption
+   - Set up alerts for unexpected spikes in usage
+   - Regularly retrain the model with new data to maintain accuracy
+
+## Two columns `random_varaible1` and `random_varaible1` are similar to each other so
+- took the average of the both 
+- add a new column named `random_variable` and then remove the earlier one
+
+
+
+## check the model performace and hyperparamter tuning at MLflow
+`https://dagshub.com/ay747283/DS-Intern-Assignment.mlflow`
+
+
+## to check the output of the code run
+- fork repositoy and then run commad 
 ```
-.
-├── data/               # Contains the training and test datasets
-│   ├── data.csv        # dataset
-├── docs/               # Documentation files
-│   └── data_description.md  # Detailed description of all features
-└── README.md           # This file
+dvc repro
+python app.py
 ```
-
-## Dataset Description
-
-The data comes from a manufacturing facility equipped with multiple sensors that collect environmental measurements. Each record contains:
-
-- Timestamp of the measurement
-- Energy consumption readings for equipment and lighting
-- Temperature and humidity readings from 9 different zones in the facility
-- Outdoor weather conditions (temperature, humidity, pressure, etc.)
-- Additional measurements and calculated variables
-
-### Notes on Feature Selection and Random Variables
-
-The dataset includes two variables named `random_variable1` and `random_variable2`. Part of your task is to determine, through proper data analysis and feature selection techniques, whether these variables should be included in your model or not. This mimics real-world scenarios where not all available data is necessarily useful for prediction.
-
-Your approach to handling these variables should be clearly documented and justified in your analysis. This will be an important part of evaluating your feature selection methodology.
-
-Note that your final solution will also be evaluated on a separate holdout dataset that we maintain privately, which serves as an additional check on your model's generalization capability.
-
-For a detailed description of all features, please refer to the [data description document](docs/data_description.md).
-
-## Deliverables
-
-Your submission should include:
-
-1. **A well-documented Jupyter notebook** containing:
-   - Exploratory data analysis (EDA)
-   - Data preprocessing steps
-   - Feature engineering and selection
-   - Model development and training
-   - Model evaluation and testing
-   - Key findings and insights
-
-2. **Python script(s)/notebook(s)** with your final model implementation
-
-3. **A brief report (PDF or Markdown format)** summarizing:
-   - Your approach to the problem
-   - Key insights from the data
-   - Model performance evaluation
-   - Recommendations for reducing equipment energy consumption
-
-## Evaluation Criteria
-
-Your solution will be evaluated based on:
-
-1. **Code Quality and Structure (25%)**
-   - Clean, well-organized, and properly documented code
-   - Appropriate use of functions and classes
-   - Effective use of Git with meaningful commit messages
-   - Code readability and adherence to Python conventions
-
-2. **Data Analysis and Preprocessing (25%)**
-   - Thoroughness of exploratory data analysis
-   - Handling of missing values, outliers, and data transformations
-   - Feature engineering creativity and effectiveness
-   - Proper data splitting methodology
-
-3. **Model Development (25%)**
-   - Selection and justification of algorithms
-   - Hyperparameter tuning approach
-   - Implementation of cross-validation
-   - Model interpretability considerations
-
-4. **Results and Insights (25%)**
-   - Model performance metrics (RMSE, MAE, R²) on both the test dataset and our private holdout dataset
-   - Quality of visualizations and explanations
-   - Practical insights and recommendations
-   - Critical evaluation of model limitations
-
-## Submission Instructions
-
-1. Fork this repository to your own GitHub account, naming it `DS-Intern-Assignment-[YourName]` (replace `[YourName]` with your actual name)
-2. Clone your forked repository to your local machine
-3. Make regular, meaningful commits as you develop your solution
-4. Push your changes to your forked repository
-5. Once complete, submit the URL of your forked repository via replying to the mail.
-
-Your commit history will be reviewed as part of the evaluation, so make sure to commit regularly and include meaningful commit messages that reflect your development process.
-
-## Time Commitment
-
-This assignment is designed to be completed in approximately 4-6 hours.
-Deadline is 48 hours/2 days from when you receive the assignment.
-
-Good luck!
