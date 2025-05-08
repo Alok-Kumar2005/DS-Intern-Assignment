@@ -77,19 +77,21 @@ def clamp_outliers(df: pd.DataFrame) -> pd.DataFrame:
 
 def preprocess_data(df: pd.DataFrame) -> pd.DataFrame:
     """
-    Preprocess the data by keeping only the first 21 columns and the last column (target),
+    Preprocess the data removing the column with less than 0.01 threshold 
+    value and taking average of random variable column,
     dropping all columns from index 21 to the second-to-last column.
     
     :param df: DataFrame containing the data.
     :return: DataFrame containing the preprocessed data.
     """
     try:
+        logger.info('Dropping column having threshold less than 0.01 with target column')
         drop = ['zone2_humidity', 'zone3_humidity', 'zone4_humidity',
                 'zone5_temperature', 'zone5_humidity', 'zone7_temperature',
                 'zone7_humidity', 'zone9_temperature', 'visibility_index',
                 'dew_point', 'minute']
         df = df.drop(columns=drop)
-
+        logger.info('taking average of random_varaible column')
         df['random_variable'] = (df['random_variable1'] + df['random_variable2'])/2
         df = df.drop(columns=['random_variable1', 'random_variable2'])
         

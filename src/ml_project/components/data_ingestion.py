@@ -77,6 +77,7 @@ def preprocess_data(df: pd.DataFrame) -> pd.DataFrame:
             'zone1_humidity',
             'zone2_temperature'
         ]
+        df = df.dropna(subset=['equipment_energy_consumption'])
 
         df[num_cols] = df[num_cols].apply(
             lambda col: pd.to_numeric(col, errors="coerce"))
