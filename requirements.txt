@@ -13,3 +13,5 @@ dagshub
 ipykernel
 seaborn
 dvc
+lightgbm
+xgboost
